@@ -48,7 +48,9 @@ public class Config {
         String output = "";
         try (Scanner scanner = new Scanner(file)) {
             scanner.useDelimiter("\\Z");
-            output = scanner.next();
+            if (scanner.hasNext()) {
+                output = scanner.next();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
